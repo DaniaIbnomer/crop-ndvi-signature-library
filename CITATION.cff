@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+title: "Crop NDVI Signature Library"
+message: "If you use this repository or build upon its methodology, please cite the associated scientific work."
+type: software
+authors:
+  - family-names: "Ahmed"
+    given-names: "Dania Ibnomer Mohamed"
+    orcid: "https://orcid.org/0009-0003-1794-3726"
+repository-code: "https://github.com/Danialbnomer/crop-ndvi-signature-library"
+url: "https://github.com/Danialbnomer/crop-ndvi-signature-library"
+abstract: >
+  A research prototype for temporal Earth Observation analysis and
+  crop NDVI signature characterization using Sentinel-2 imagery and
+  Google Earth Engine. The repository continues research originally
+  developed through a regional Young Professionals project associated
+  with the Eastern Nile Technical Regional Office (ENTRO) of the
+  Nile Basin Initiative (NBI).
+keywords:
+  - Earth Observation
+  - Remote Sensing
+  - GIS
+  - Sentinel-2
+  - NDVI
+  - crop phenology
+  - crop identification
+  - agricultural monitoring
+  - irrigation management
+  - Google Earth Engine
+  - time-series analysis
+license: "NOASSERTION"
+preferred-citation:
+  type: conference-paper
+  authors:
+    - family-names: "Ahmed"
+      given-names: "Dania Ibnomer Mohamed"
+  title: "Using Sentinel-2 on Google Earth Engine in Crop Type Identification for Irrigation Management in Eastern Nile, Sudan"
+  year: 2023
+  month: 9
+  day: 21
+  collection-title: "7th Nile Basin Development Forum (NBDF)"
+  publisher: "Nile Basin Initiative"
+  location: "Kampala, Uganda"
+  url: "https://nilebasin.org/sites/default/files/2024-05/CS64.pdf"
