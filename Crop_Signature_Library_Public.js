@@ -1,5 +1,7 @@
-/**************************************************************
-Crop Signature Library using Google Earth Engine
+/*
+==============================================================
+PUBLIC CROP NDVI SIGNATURE LIBRARY
+==============================================================
 
 Author:
 Dania Ibnomer Mohamed Ahmed
@@ -9,13 +11,13 @@ Farm Hub – Earth Observation / Agricultural Decision Support
 
 Study Areas:
 - Kenana Sugar Scheme
-- Gezira Scheme (ELGEBAL)
+- Gezira Scheme (ELGEBAL), Sudan
 
 Satellite:
 Sentinel-2 Surface Reflectance Harmonized
 
 Purpose:
-- Crop NDVI temporal signatures
+- Temporal crop NDVI signatures
 - Crop phenology investigation
 - Reference crop-signature library
 
@@ -32,15 +34,16 @@ PUBLIC RESEARCH WORKFLOW
 This script documents the analytical workflow used to generate
 temporal crop NDVI reference signatures.
 
-Original Earth Engine study-area boundaries, GPS reference samples,
-and supporting datasets are maintained separately and are not
-included in this public repository.
+The original Earth Engine study-area boundaries, GPS reference
+samples, and supporting datasets are maintained separately and
+are not included in this public repository.
 
 This public version is intended for methodological documentation
-and reproducibility of the analytical approach. Direct execution
-requires the original Earth Engine assets.
+and reproducibility of the analytical approach.
+
+Direct execution requires compatible Earth Engine assets.
+==============================================================
 */
-**************************************************************/
 
 
 //==============================================================
@@ -49,35 +52,37 @@ requires the original Earth Engine assets.
 //==============================================================
 //
 // The original research used private Earth Engine assets.
-// They are intentionally NOT included in this public version.
+// They are intentionally not included in this public version.
 //
-// Replace the placeholders below with your own compatible assets
-// if you want to reproduce the workflow.
+// Replace the placeholders below with compatible assets if you
+// want to reproduce the workflow.
 //
-// IMPORTANT:
-// These placeholders are examples only and are not functional
-// asset IDs.
-//
+// The asset names indicate the type of input required; they do
+// not represent functional asset IDs.
 //==============================================================
 
-// Kenana study-area boundary
+
+// Kenana Sugar Scheme — study-area boundary
 var kenanaAOI = ee.FeatureCollection(
   'YOUR_KENANA_AOI_ASSET'
 );
 
-// Gezira crop/reference dataset
+
+// Gezira Scheme — crop/reference sample dataset
 var elGebelGPS = ee.FeatureCollection(
-  'YOUR_ELGEBAL_REFERENCE_POINTS_ASSET'
+  'YOUR_GEZIRA_REFERENCE_POINTS_ASSET'
 );
 
-// Gezira crop map
+
+// Gezira Scheme — crop map
 var geziraCropMap = ee.Image(
   'YOUR_GEZIRA_CROP_MAP_ASSET'
 );
 
-// Sugarcane reference points
+
+// Kenana Sugar Scheme — sugarcane reference samples
 var Sugarcane = ee.FeatureCollection(
-  'YOUR_SUGARCANE_REFERENCE_POINTS_ASSET'
+  'YOUR_SUGARCANE_REFERENCE_ASSET'
 );
 
 
@@ -269,7 +274,7 @@ var geziraNDVI =
 
 //==============================================================
 // SECTION 10
-// CHECK COLLECTIONS
+// CHECK IMAGE COLLECTIONS
 //==============================================================
 
 print(
@@ -295,7 +300,7 @@ print(
 
 //==============================================================
 // SECTION 11
-// CROP REFERENCE CLASSES
+// CROP REFERENCE CLASSES — GEZIRA
 //==============================================================
 
 var wheat =
@@ -335,11 +340,13 @@ var wheatReference =
     ee.Filter.eq('id', 2)
   );
 
+
 // Cotton — Point 4
 var cottonReference =
   cotton.filter(
     ee.Filter.eq('id', 4)
   );
+
 
 // Original reference points
 var chickpeaReference =
@@ -354,15 +361,16 @@ var fallowReference =
 
 //==============================================================
 // SECTION 13
-// SUGARCANE REFERENCE
+// SUGARCANE REFERENCE — KENANA
 //==============================================================
-
+//
 // Select the third sugarcane reference point.
 //
 // Earth Engine list indexing is zero-based:
 // 0 = Point 1
 // 1 = Point 2
 // 2 = Point 3
+//==============================================================
 
 var sugarcaneList =
   Sugarcane.toList(
@@ -516,7 +524,6 @@ var fallowData =
 //
 // Sugarcane uses the Kenana image collection because
 // its reference point belongs to the Kenana study area.
-//
 //==============================================================
 
 var sugarcaneData =
