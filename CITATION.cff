@@ -6,8 +6,8 @@ authors:
   - family-names: "Ahmed"
     given-names: "Dania Ibnomer Mohamed"
     orcid: "https://orcid.org/0009-0003-1794-3726"
-repository-code: "https://github.com/Danialbnomer/crop-ndvi-signature-library"
-url: "https://github.com/Danialbnomer/crop-ndvi-signature-library"
+repository-code: "https://github.com/DaniaIbnomer/crop-ndvi-signature-library"
+url: "https://github.com/DaniaIbnomer/crop-ndvi-signature-library"
 abstract: >
   A research prototype for temporal Earth Observation analysis and
   crop NDVI signature characterization using Sentinel-2 imagery and
